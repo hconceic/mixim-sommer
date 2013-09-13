@@ -122,6 +122,7 @@ class Mac1609_4 : public BaseMacLayer,
 		~Mac1609_4() { };
 
 		void changeServiceChannel(int channelNumber);
+		t_channel getActiveChannel() const;
 
 
 	protected:
