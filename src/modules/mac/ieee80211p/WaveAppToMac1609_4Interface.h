@@ -36,6 +36,7 @@ class WaveAppToMac1609_4Interface {
 	public:
 
 		virtual void changeServiceChannel(int channelNumber) = 0;
+		virtual t_channel getActiveChannel() const = 0;
 
 		virtual ~WaveAppToMac1609_4Interface() {} ;
 };
