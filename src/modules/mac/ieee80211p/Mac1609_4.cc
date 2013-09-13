@@ -453,6 +453,10 @@ void Mac1609_4::changeServiceChannel(int cN) {
 	}
 }
 
+t_channel Mac1609_4::getActiveChannel() const {
+        return activeChannel;
+}
+
 void Mac1609_4::handleLowerMsg(cMessage* msg) {
 	Mac80211Pkt* macPkt = static_cast<Mac80211Pkt*>(msg);
 	ASSERT(macPkt);
