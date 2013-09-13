@@ -135,6 +135,10 @@ void Mac1609_4::initialize(int stage) {
 void Mac1609_4::handleSelfMsg(cMessage* msg) {
 	if (msg == nextChannelSwitch) {
 		ASSERT(useSCH);
+		
+		// hconceic: this allow the user to catch the channel switch events.
+		// it is useful to compute a periodic task at each channel switch.
+		sendUp(msg->dup());
 
 		scheduleAt(simTime() + SWITCHING_INTERVAL_11P, nextChannelSwitch);
 
